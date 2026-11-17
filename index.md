@@ -4,13 +4,13 @@ Entregamos no seu comércio
 
 Há 10 anos ao lado de quem produz e revende alimentos, com compromisso e pontualidade nas entregas.
 
-[Solicitar cotação de ovos](https://wa.me/5524999619682?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mix%20Alimentos%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.) [Ver os produtos](https://mixalimentos.com/#produtos) 
+[Solicitar cotação de ovos](https://wa.me/5524999619682?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mix%20Alimentos%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.) [Ver os produtos](https://mixalimentos.com/#produtos)
 
-Atendimento direto Entregas programadas 
+Atendimento direto Entregas programadas
 
-Entregas programadas em Barra Mansa Pinheiral Volta Redonda Resende Angra dos Reis 
+Entregas programadas em Barra Mansa Pinheiral Volta Redonda Resende Angra dos Reis
 
-O essencial para o dia a dia 
+O essencial para o dia a dia
 
 ## Seu abastecimento, em um só pedido.
 
@@ -20,39 +20,39 @@ Da produção à revenda, escolha os produtos e consulte o fornecimento para o s
 
 Caixas com 12 cartelas de 30 ovos. São 360 unidades para a produção e a revenda do seu comércio.
 
-[Conhecer o produto](https://mixalimentos.com/ovos-de-galinha/) 
+[Conhecer o produto](https://mixalimentos.com/ovos-de-galinha/)
 
 ### Ovos de codorna em conserva
 
 Praticidade para porções, saladas e acompanhamentos. Uma opção para ampliar seu cardápio ou a oferta do seu comércio.
 
-[Conhecer o produto](https://mixalimentos.com/ovos-de-codorna-em-conserva/) 
+[Conhecer o produto](https://mixalimentos.com/ovos-de-codorna-em-conserva/)
 
 ### Batata palha
 
 Para acompanhar lanches, refeições e suas vendas. Aproveite a cotação de ovos e consulte também a batata palha.
 
-[Conhecer o produto](https://mixalimentos.com/batata-palha/) 
+[Conhecer o produto](https://mixalimentos.com/batata-palha/)
 
-Quem atendemos 
+Quem atendemos
 
 ## Para quem prepara, serve ou revende alimentos.
 
 Padarias, restaurantes e lanchonetes já fazem parte da nossa rotina. E nosso fornecimento vai além: atendemos negócios que usam ovos, codorna em conserva e batata palha na produção ou na revenda.
 
-Padarias e confeitariasDa massa à vitrine. 
+Padarias e confeitariasDa massa à vitrine.
 
-Restaurantes e lanchonetesPara a rotina da cozinha. 
+Restaurantes e lanchonetesPara a rotina da cozinha.
 
-Pizzarias e hamburgueriasMais opções no mesmo pedido. 
+Pizzarias e hamburgueriasMais opções no mesmo pedido.
 
-Hotéis, pousadas e buffetsAbastecimento para servir. 
+Hotéis, pousadas e buffetsAbastecimento para servir.
 
-Mercados e hortifrutisProdutos para revender. 
+Mercados e hortifrutisProdutos para revender.
 
-Delivery e cozinhas industriaisPara quem produz alimentos. 
+Delivery e cozinhas industriaisPara quem produz alimentos.
 
-Perto do seu negócio 
+Perto do seu negócio
 
 ## Da nossa cidade para o seu comércio.
 
@@ -60,15 +60,15 @@ Nossa base é Barra Mansa. Realizamos entregas programadas em cinco cidades, com
 
 [Consultar entrega na minha cidade](https://wa.me/5524999619682?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mix%20Alimentos%20e%20gostaria%20de%20consultar%20a%20entrega%20para%20meu%20com%C3%A9rcio.) A programação depende da rota e da disponibilidade para o seu endereço.
 
-Barra Mansa Nossa base 
+Barra Mansa Nossa base
 
-Pinheiral RJ 
+Pinheiral RJ
 
-Volta Redonda RJ 
+Volta Redonda RJ
 
-Resende RJ 
+Resende RJ
 
-Angra dos Reis RJ 
+Angra dos Reis RJ
 
 ### Compromisso com o combinado
 
@@ -82,7 +82,7 @@ Uma década de atuação no fornecimento de alimentos.
 
 Produtos, quantidades e entregas pelo WhatsApp.
 
-Antes de pedir 
+Antes de pedir
 
 ## Dúvidas sobre produtos e entregas
 
@@ -104,7 +104,7 @@ Como faço meu pedido?
 
 Fale com a Mix Alimentos pelo WhatsApp. Informe os produtos, as quantidades e sua cidade para consultar as condições e combinar a entrega.
 
-Seu pedido, do seu jeito 
+Seu pedido, do seu jeito
 
 ## Aproveite para cotar tudo junto.
 

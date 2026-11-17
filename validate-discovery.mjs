@@ -6,7 +6,7 @@ import {handler} from './server.mjs';
 import config from './site.config.mjs';
 
 const out=new URL('./public_html/',import.meta.url);
-const routes=['','ovos-de-galinha','ovos-de-codorna-em-conserva','batata-palha','sobre','contato','privacidade'];
+const routes=['','ovos-de-galinha','ovos-de-codorna-em-conserva','batata-palha','sobre','contato','privacidade','termos'];
 let checks=0;
 function check(test,label){assert.ok(test,label);checks++}
 async function request(url,headers={},method='GET'){
@@ -22,6 +22,8 @@ for(const route of routes){
   const html=await request(url);
   check(html.status===200&&html.headers['Content-Type'].startsWith('text/html'),url+' HTML');
   const text=html.body.toString();
+  check(!text.includes('<dialog')&&!text.includes('privacy-button'),url+' no privacy popup');
+  check(text.includes('rel="privacy-policy"')&&text.includes('rel="terms-of-service"'),url+' legal page links');
   const graph=JSON.parse(text.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1])['@graph'];
   const organization=graph.find(n=>n['@type']==='Organization');
   check(organization.address.addressLocality==='Barra Mansa'&&!organization.address.streetAddress,url+' confirmed address only');

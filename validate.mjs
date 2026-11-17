@@ -17,7 +17,7 @@ async function intercept(context){await context.route('http://127.0.0.1:4173/**'
 const context=await browser.newContext();await intercept(context);const page=await context.newPage();
 const failures=[],checks=[],errors=[];
 page.on('pageerror',e=>errors.push(e.message));
-const routes=['/','/ovos-de-galinha/','/ovos-de-codorna-em-conserva/','/batata-palha/','/sobre/','/contato/','/privacidade/'];
+const routes=['/','/ovos-de-galinha/','/ovos-de-codorna-em-conserva/','/batata-palha/','/sobre/','/contato/','/privacidade/','/termos/'];
 function check(label,passed,detail=''){checks.push({label,passed,detail});if(!passed)failures.push(label)}
 try{
 for(const route of routes){
@@ -56,7 +56,7 @@ await page.locator('#quantity-batata-palha').fill('-1');check('Negative quantiti
 await page.evaluate(()=>{window.__events=[];window.addEventListener('mix:whatsapp_click',e=>window.__events.push(e.detail))});
 // Prevent external navigation. Validate the local intent event without contacting anyone.
 await page.evaluate(()=>document.querySelector('[data-combined]').addEventListener('click',e=>e.preventDefault()));await page.locator('[data-combined]').click();const events=await page.evaluate(()=>window.__events);check('One intention event without personal data',events.length===1&&events[0].selected_city==='Resende'&&!JSON.stringify(events).includes('2 caixas'));
-await page.locator('.privacy-button').click();check('Privacy dialog opens',await page.locator('dialog').evaluate(d=>d.open));await page.keyboard.press('Escape');check('Privacy dialog closes',!(await page.locator('dialog').evaluate(d=>d.open)));
+await page.locator('.privacy-link').click();check('Privacy opens as a dedicated page',page.url().includes('/privacidade/')&&await page.locator('h1').count()===1);check('Privacy popup removed',await page.locator('dialog').count()===0);await page.goBack();
 await page.locator('summary').first().click();check('FAQ opens',await page.locator('details').first().getAttribute('open')!==null);
 check('404 handler status',(await request('http://127.0.0.1:4173/inexistente')).status===404);
 check('Friendly route handler redirect',(await request('http://127.0.0.1:4173/batata-palha')).status===301);

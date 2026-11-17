@@ -9,7 +9,7 @@ export default {
   address: {addressLocality:'Barra Mansa',addressRegion:'RJ',addressCountry:'BR'},
   sameAs: [], // Somente URLs confirmadas de perfis oficiais da Mix.
   // Alterar apenas quando o conteúdo da respectiva página mudar, nunca a cada build.
-  lastModified: {'':'2026-11-17','ovos-de-galinha':'2026-11-17','ovos-de-codorna-em-conserva':'2026-11-17','batata-palha':'2026-11-17','sobre':'2026-11-17','contato':'2026-11-17','privacidade':'2026-11-17'},
+  lastModified: {'':'2026-11-17','ovos-de-galinha':'2026-11-17','ovos-de-codorna-em-conserva':'2026-11-17','batata-palha':'2026-11-17','sobre':'2026-11-17','contato':'2026-11-17','privacidade':'2026-11-17','termos':'2026-11-17'},
   analyticsId: '', // Reservado. Nenhum rastreador é carregado nesta versão.
   searchConsoleVerification: ''
 };

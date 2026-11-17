@@ -5,12 +5,15 @@ import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {brotliCompressSync,gzipSync} from 'node:zlib';
 import {prefersMarkdown,discoveryLinks} from './discovery.mjs';
+import {handleMcp} from './mcp.mjs';
 const root=path.join(path.dirname(fileURLToPath(import.meta.url)),'public_html');
 const types={'.html':'text/html; charset=utf-8','.md':'text/markdown; charset=utf-8','.css':'text/css; charset=utf-8','.js':'application/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.xml':'application/xml; charset=utf-8','.txt':'text/plain; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.jpg':'image/jpeg'};
 const representations=new Map();
 export async function handler(req,res){
   try{
     const headers=req.headers||{};
+    const mcpPath=new URL(req.url,'http://localhost').pathname;
+    if(await handleMcp(req,res,mcpPath))return;
     if(req.method&&!['GET','HEAD'].includes(req.method)){res.writeHead(405,{Allow:'GET, HEAD'});res.end();return}
     const url=new URL(req.url,'http://localhost');
     const pathname=decodeURIComponent(url.pathname);
@@ -55,5 +58,5 @@ export async function handler(req,res){
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   const server=http.createServer(handler);
-  server.listen(Number(process.env.PORT)||4173,process.env.HOST||'0.0.0.0',()=>console.log('Mix Alimentos: porta '+server.address().port));
+  server.listen(Number(process.env.PORT)||4173,process.env.HOST||(process.env.PORT?'0.0.0.0':'127.0.0.1'),()=>console.log('Mix Alimentos: porta '+server.address().port));
 }

@@ -1,4 +1,4 @@
-[Início](https://mixalimentos.com/) / Ovos de galinha 
+[Início](https://mixalimentos.com/) / Ovos de galinha
 
 Ovos de galinha no atacado
 
@@ -6,18 +6,18 @@ Ovos de galinha no atacado
 
 Da primeira receita à reposição da prateleira. Conte com ovos brancos em caixas de 360 unidades e atendimento direto para programar seu pedido.
 
-[Cotar ovos de galinha](https://wa.me/5524999619682?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mix%20Alimentos%20e%20gostaria%20de%20cotar%20ovos%20de%20galinha%20em%20caixas%20de%20360%20unidades.%0A%0APodem%20me%20informar%20as%20condi%C3%A7%C3%B5es%20e%20a%20programa%C3%A7%C3%A3o%20de%20entrega%3F) [Conhecer o produto](https://mixalimentos.com/ovos-de-galinha/#sobre-produto) 
+[Cotar ovos de galinha](https://wa.me/5524999619682?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mix%20Alimentos%20e%20gostaria%20de%20cotar%20ovos%20de%20galinha%20em%20caixas%20de%20360%20unidades.%0A%0APodem%20me%20informar%20as%20condi%C3%A7%C3%B5es%20e%20a%20programa%C3%A7%C3%A3o%20de%20entrega%3F) [Conhecer o produto](https://mixalimentos.com/ovos-de-galinha/#sobre-produto)
 
-Atendimento direto Entregas programadas 
+Atendimento direto Entregas programadas
 
 1 caixa = 12 cartelas de 30 ovos = 360 unidades
 
 360 ovos por caixa
-12 cartelas de 30 
+12 cartelas de 30
 
-Entregas programadas em Barra Mansa Pinheiral Volta Redonda Resende Angra dos Reis 
+Entregas programadas em Barra Mansa Pinheiral Volta Redonda Resende Angra dos Reis
 
-Compra em volume 
+Compra em volume
 
 ## A quantidade certa para a rotina do comércio.
 
@@ -47,7 +47,7 @@ Uma década de atuação no fornecimento de alimentos.
 
 Produtos, quantidades e entregas pelo WhatsApp.
 
-Complete seu abastecimento 
+Complete seu abastecimento
 
 ## O mesmo contato. Mais opções para o seu negócio.
 
@@ -57,15 +57,15 @@ Consulte outros produtos no mesmo atendimento e organize seu pedido com a gente.
 
 Praticidade para porções, saladas e acompanhamentos. Uma opção para ampliar seu cardápio ou a oferta do seu comércio.
 
-[Conhecer o produto](https://mixalimentos.com/ovos-de-codorna-em-conserva/) 
+[Conhecer o produto](https://mixalimentos.com/ovos-de-codorna-em-conserva/)
 
 ### Batata palha
 
 Para acompanhar lanches, refeições e suas vendas. Aproveite a cotação de ovos e consulte também a batata palha.
 
-[Conhecer o produto](https://mixalimentos.com/batata-palha/) 
+[Conhecer o produto](https://mixalimentos.com/batata-palha/)
 
-Antes de pedir 
+Antes de pedir
 
 ## Dúvidas sobre produtos e entregas
 
@@ -83,7 +83,7 @@ Posso cotar os três produtos juntos?
 
 Sim. Você pode consultar ovos de galinha, ovos de codorna em conserva e batata palha no mesmo atendimento.
 
-Seu pedido, do seu jeito 
+Seu pedido, do seu jeito
 
 ## Aproveite para cotar tudo junto.
 

@@ -2,7 +2,7 @@
 
 WhatsApp comercial: (24) 99961-9682 .
 
-[Falar com a Mix Alimentos](https://wa.me/5524999619682?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mix%20Alimentos%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.) 
+[Falar com a Mix Alimentos](https://wa.me/5524999619682?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mix%20Alimentos%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.)
 
 ## Para solicitar um orçamento
 

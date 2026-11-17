@@ -1,4 +1,8 @@
-# Privacidade no site da Mix Alimentos.
+Política de privacidade
+
+# Sua privacidade na Mix Alimentos.
+
+Este site apresenta os produtos e a área de entrega da Mix Alimentos. Aqui explicamos quais informações são usadas na cotação e como funciona o contato com a nossa equipe.
 
 ## Navegação e cotação
 

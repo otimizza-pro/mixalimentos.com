@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node build.mjs",
     "start": "node server.mjs",
-    "test": "node validate-discovery.mjs && node validate.mjs"
+    "test": "node validate-discovery.mjs && node validate-agents.mjs && node validate.mjs"
   },
   "engines": {
     "node": ">=24"

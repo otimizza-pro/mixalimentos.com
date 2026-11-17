@@ -5,10 +5,6 @@ toggle?.addEventListener('click',()=>{const opened=toggle.getAttribute('aria-exp
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&toggle?.getAttribute('aria-expanded')==='true'){closeMenu();toggle.focus()}});
 nav?.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu()});
 document.addEventListener('click',e=>{if(!e.target.closest('.header'))closeMenu()});
-const dialog=document.querySelector('#privacy');
-document.querySelector('.privacy-button')?.addEventListener('click',()=>dialog.showModal());
-dialog?.querySelector('[data-close]')?.addEventListener('click',()=>dialog.close());
-dialog?.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
 const quote=document.querySelector('.quote-form');
 function updateQuote(){
 if(!quote)return;

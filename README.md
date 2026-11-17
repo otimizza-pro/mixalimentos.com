@@ -1,6 +1,6 @@
 # Mix Alimentos
 
-Site comercial de sete páginas para https://mixalimentos.com.
+Site comercial de oito páginas para https://mixalimentos.com.
 
 ## Gerar e visualizar
 
@@ -45,10 +45,20 @@ Os materiais de referência, imagens originais, arquivos internos da agência, c
 
 ## Descoberta e desempenho
 
-O build inclui páginas Sobre, Contato e Privacidade, sitemap com datas de alteração, dados estruturados baseados no conteúdo visível, llms.txt e um index.md por página. As datas em site.config.mjs devem mudar apenas quando o conteúdo mudar. Não são datas de compilação.
+O build inclui páginas Sobre, Contato, Privacidade e Termos de uso, sitemap com datas de alteração, dados estruturados baseados no conteúdo visível, llms.txt e um index.md por página. As datas em site.config.mjs devem mudar apenas quando o conteúdo mudar. Não são datas de compilação.
 
 O servidor Node negocia text/markdown pelo cabeçalho Accept, informa as alternativas no cabeçalho Link e usa Vary para separar formatos no cache. Entrega Brotli ou gzip para textos, cache de sete dias para recursos estáticos, ETags e respostas 304. As páginas HTML exigem revalidação. Não é necessário instalar bibliotecas em produção.
 
 Na hospedagem estática Apache/LiteSpeed, o .htaccess também entrega a alternativa index.md existente para solicitações explícitas de Markdown, respeitando q=0. Requer mod_rewrite e permissão AllowOverride para estas regras. O cabeçalho Vary: Accept separa os formatos no cache. O servidor Node implementa a negociação completa por preferência. Se a plataforma servir os arquivos por um proxy que ignora .htaccess, é necessário configurar a negociação nesse proxy ou usar npm start com server.mjs.
 
-Apenas Barra Mansa, RJ, Brasil está confirmada como localidade. Rua, número, CEP, CNPJ e perfis oficiais continuam pendentes. Configure sameAs apenas com os perfis reais da Mix. Não há servidor MCP nem ferramentas WebMCP, pois o site não possui backend de pedidos. O orçamento depende de revisão e envio pelo visitante no WhatsApp.
+Apenas Barra Mansa, RJ, Brasil está confirmada como localidade. Rua, número, CEP, CNPJ e perfis oficiais continuam pendentes. Configure sameAs apenas com os perfis reais da Mix. O orçamento depende de revisão e envio pelo visitante no WhatsApp.
+
+## Ferramentas para agentes
+
+O JavaScript registra mix_list_products, mix_delivery_area e mix_prepare_quote quando document.modelContext (ou a API anterior navigator.modelContext) está disponível. Sem essa API, o site continua funcionando normalmente, sem instalar polyfills. As ferramentas apenas retornam informações públicas e uma prévia de cotação. Não enviam mensagens, não abrem aplicativos, não gravam dados e não confirmam compras.
+
+O servidor Node oferece POST /mcp com JSON-RPC e Streamable HTTP na versão fixada 2025-11-25. Não oferece SSE ou sessões. O cartão dinâmico está em /.well-known/mcp/server-card.json, /.well-known/mcp.json e /mcp/server-card. O formato de cartão é uma compatibilidade com a proposta antiga SEP-1649, ainda usada pela auditoria. Ele declara apenas as três ferramentas que o endpoint executa. Os cartões não são copiados para public_html: só são servidos pelo processo que também atende /mcp.
+
+Para ativar na Hostinger, a implantação precisa executar o projeto Node, com arquivo de entrada server.mjs e comando npm start, após npm run build. Não basta servir a pasta public_html como arquivos estáticos. A porta é lida de PORT; HOST pode ser configurado se necessário. A publicação estática mantém as páginas e WebMCP, mas não executa o servidor MCP.
+
+Apenas o domínio oficial e os endereços locais de desenvolvimento são aceitos em Origin. Clientes MCP sem Origin podem consultar as informações públicas sem autenticação. Há limite de 64 KB por solicitação e 60 solicitações por minuto por IP. Não envie nome de cliente, endereço, telefone ou outros dados pessoais às ferramentas.
