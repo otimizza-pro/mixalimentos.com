@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
-import {handler} from './server.mjs';
+import {handler} from './request-handler.mjs';
 const require=createRequire(import.meta.url);
 const {resolveTool,browserOptions}=require('./dev-tools.cjs');
 const {chromium}=require(resolveTool('playwright'));

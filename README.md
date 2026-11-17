@@ -62,3 +62,7 @@ O servidor Node oferece POST /mcp com JSON-RPC e Streamable HTTP na versão fixa
 Para ativar na Hostinger, a implantação precisa executar o projeto Node, com arquivo de entrada server.mjs e comando npm start, após npm run build. Não basta servir a pasta public_html como arquivos estáticos. A porta é lida de PORT; HOST pode ser configurado se necessário. A publicação estática mantém as páginas e WebMCP, mas não executa o servidor MCP.
 
 Apenas o domínio oficial e os endereços locais de desenvolvimento são aceitos em Origin. Clientes MCP sem Origin podem consultar as informações públicas sem autenticação. Há limite de 64 KB por solicitação e 60 solicitações por minuto por IP. Não envie nome de cliente, endereço, telefone ou outros dados pessoais às ferramentas.
+
+## Inicialização do Node
+
+server.mjs chama listen() diretamente quando carregado pela Hostinger, inclusive se a plataforma o importar por um processo próprio. A porta usa PORT (ou 4173) e a interface usa HOST (ou 0.0.0.0). O tratamento das requisições fica em request-handler.mjs, que os testes podem importar sem abrir uma porta. validate-startup.mjs verifica a inicialização por importação, com porta definida pelo ambiente.

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {Readable} from 'node:stream';
 import fs from 'node:fs/promises';
 import vm from 'node:vm';
-import {handler} from './server.mjs';
+import {handler} from './request-handler.mjs';
 
 let checks=0;
 const check=(value,label)=>{assert.ok(value,label);checks++};

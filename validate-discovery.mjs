@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {brotliDecompressSync,gunzipSync} from 'node:zlib';
-import {handler} from './server.mjs';
+import {handler} from './request-handler.mjs';
 import config from './site.config.mjs';
 
 const out=new URL('./public_html/',import.meta.url);
