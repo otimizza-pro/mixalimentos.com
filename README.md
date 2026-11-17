@@ -1,6 +1,6 @@
 # Mix Alimentos
 
-Site comercial de quatro páginas para https://mixalimentos.com.
+Site comercial de sete páginas para https://mixalimentos.com.
 
 ## Gerar e visualizar
 
@@ -42,3 +42,13 @@ O domínio oficial é https://mixalimentos.com, sem www. O build gera sitemap, c
 Edite os fontes e refaça o build. Preserve a pasta `public_html/` atualizada no Git.
 
 Os materiais de referência, imagens originais, arquivos internos da agência, capturas de testes e ZIPs não fazem parte do repositório. As imagens WebP necessárias ao build estão incluídas. `prepare-assets.cjs` só é necessário para refazer essas imagens a partir dos originais, que ficam fora do repositório.
+
+## Descoberta e desempenho
+
+O build inclui páginas Sobre, Contato e Privacidade, sitemap com datas de alteração, dados estruturados baseados no conteúdo visível, llms.txt e um index.md por página. As datas em site.config.mjs devem mudar apenas quando o conteúdo mudar. Não são datas de compilação.
+
+O servidor Node negocia text/markdown pelo cabeçalho Accept, informa as alternativas no cabeçalho Link e usa Vary para separar formatos no cache. Entrega Brotli ou gzip para textos, cache de sete dias para recursos estáticos, ETags e respostas 304. As páginas HTML exigem revalidação. Não é necessário instalar bibliotecas em produção.
+
+Na hospedagem estática Apache, os arquivos Markdown ficam disponíveis por URL direta e as alternativas são indicadas no HTML. O .htaccess configura compressão, cache e descoberta do llms.txt. A negociação por Accept é implementada no servidor Node.
+
+Apenas Barra Mansa, RJ, Brasil está confirmada como localidade. Rua, número, CEP, CNPJ e perfis oficiais continuam pendentes. Configure sameAs apenas com os perfis reais da Mix. Não há servidor MCP nem ferramentas WebMCP, pois o site não possui backend de pedidos. O orçamento depende de revisão e envio pelo visitante no WhatsApp.

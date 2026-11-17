@@ -1,0 +1,15 @@
+# Mix Alimentos
+
+> Fornecimento de ovos de galinha, ovos de codorna em conserva e batata palha para comércios. Entregas em Barra Mansa, Pinheiral, Volta Redonda, Resende, Angra dos Reis, RJ.
+
+WhatsApp: (24) 99961-9682. Base de atendimento: Barra Mansa, RJ, Brasil. Condições e disponibilidade são confirmadas no atendimento. O site não publica preços.
+
+## Páginas
+
+- [Início](https://mixalimentos.com/index.md)
+- [Ovos de galinha](https://mixalimentos.com/ovos-de-galinha/index.md)
+- [Ovos de codorna em conserva](https://mixalimentos.com/ovos-de-codorna-em-conserva/index.md)
+- [Batata palha](https://mixalimentos.com/batata-palha/index.md)
+- [Sobre a Mix Alimentos](https://mixalimentos.com/sobre/index.md)
+- [Contato](https://mixalimentos.com/contato/index.md)
+- [Privacidade](https://mixalimentos.com/privacidade/index.md)

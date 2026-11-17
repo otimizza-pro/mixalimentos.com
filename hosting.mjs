@@ -14,18 +14,24 @@ RewriteCond %{THE_REQUEST} \\s/+(.*/)?index\\.html(?:[\\s?]) [NC]
 RewriteRule ^(.*)index\\.html$ /$1 [R=301,L,NE]
 </IfModule>
 `:''}<IfModule mod_deflate.c>
-AddOutputFilterByType DEFLATE text/html text/css text/plain application/javascript application/json application/xml image/svg+xml
+AddOutputFilterByType DEFLATE text/markdown text/html text/css text/plain application/javascript application/json application/xml image/svg+xml
 </IfModule>
 <IfModule mod_headers.c>
 <FilesMatch "\\.(webp|png|jpg|svg|css|js)$">
 Header set Cache-Control "public, max-age=604800"
 </FilesMatch>
-<FilesMatch "\\.html$">
+<FilesMatch "\\.(html|md)$">
 Header set Cache-Control "no-cache"
+</FilesMatch>
+Header append Link "</llms.txt>; rel=describedby"
+<FilesMatch "\\.md$">
+Header set X-Robots-Tag "noindex"
 </FilesMatch>
 Header always set X-Content-Type-Options "nosniff"
 Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
+AddType text/markdown .md
+AddCharset UTF-8 .md .txt
 AddType image/webp .webp
 AddType image/svg+xml .svg
 `;

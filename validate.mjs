@@ -17,7 +17,7 @@ async function intercept(context){await context.route('http://127.0.0.1:4173/**'
 const context=await browser.newContext();await intercept(context);const page=await context.newPage();
 const failures=[],checks=[],errors=[];
 page.on('pageerror',e=>errors.push(e.message));
-const routes=['/','/ovos-de-galinha/','/ovos-de-codorna-em-conserva/','/batata-palha/'];
+const routes=['/','/ovos-de-galinha/','/ovos-de-codorna-em-conserva/','/batata-palha/','/sobre/','/contato/','/privacidade/'];
 function check(label,passed,detail=''){checks.push({label,passed,detail});if(!passed)failures.push(label)}
 try{
 for(const route of routes){

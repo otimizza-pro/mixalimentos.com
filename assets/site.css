@@ -55,3 +55,5 @@
 @media(max-width:800px) and (min-width:561px){.products{gap:15px}.products .product-card .card-body{padding:20px 16px}.products .product-card h3{font-size:1.12rem;min-height:3.4em}}
 @media(max-width:560px){.products{grid-template-columns:1fr}.products .product-card,.products .product-card:first-child{display:flex;grid-column:auto}.products .product-card .picture,.products .product-card:first-child .picture{aspect-ratio:1.15;max-height:none}.products .product-card h3,.products .product-card:first-child h3{min-height:0;font-size:1.45rem}.products .product-card p{font-size:.86rem}.products .card-link{font-size:.85rem}.hero:not(.product-hero) .eyebrow{font-size:.85rem}.delivery:before{background-size:auto 100%;opacity:.035}}
 
+
+.information-page{max-width:900px}.information-page h1{font-size:clamp(2.3rem,5vw,3.5rem);max-width:24ch;margin-bottom:24px}.information-page h2{font-size:clamp(1.5rem,3vw,2rem);margin:36px 0 16px}.information-page p{margin:16px 0}.information-page p a{text-decoration:underline}.information-page .btn{margin-top:12px}.footer-bottom{gap:12px;flex-wrap:wrap}.footer-bottom>a{display:inline-block;margin-right:12px}
