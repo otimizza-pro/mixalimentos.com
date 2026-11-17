@@ -1,0 +1,12 @@
+node_modules/
+validation/
+*.zip
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+
+# Imagem intermediária. A publicação utiliza logo.webp.
+/assets/logo.png

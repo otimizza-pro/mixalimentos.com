@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" fill="none">
+  <title>Mapa ilustrativo das cinco cidades atendidas, sem escala</title>
+  <desc>Resende a oeste, Barra Mansa ao centro, Volta Redonda e Pinheiral a leste e Angra dos Reis ao sul. Conexões decorativas, não representam trajetos de entrega.</desc>
+  <g stroke="#5f8269" stroke-width="1.4">
+    <path d="M-70 113C130 20 241 188 432 96s327 58 481-23 259 0 369-80M-40 161c210-88 310 61 489-17s299 51 470-24 228 0 351-40M-20 209c193-65 304 40 486-17s288 35 464-25 249-2 333-32M-30 264c195-55 304 20 490-20s303 29 466-19 233 0 340-18M-20 326c195-45 322-3 500-27s278 32 452-5 237-6 351-13M-20 383c188-23 321-14 505-20s286 18 451-9 234 10 347 2M-30 449c188-30 330-20 505-15s300 23 452 0 245 15 358 18M-20 511c204-23 327-24 509-6s289 27 444 16 225 14 346 22M-20 575c204-30 337-22 519-3s283 23 441 21 211 20 340 13"/>
+    <path d="M62-30c135 150 39 255 177 361s4 180 102 309M307-30c64 139-42 216 72 322s-31 214 57 348M546-30c-17 127-90 224-23 317s-41 213 14 353M786-30c-44 111-90 204-60 303s-76 235-46 367M1025-30c-70 104-84 218-89 304s-93 214-80 366" opacity=".5"/>
+  </g>
+  <path d="M140 139C283 119 448 164 620 203S834 143 1010 152M620 203c-88 97-114 172-185 312" stroke="#356a4b" stroke-width="3" stroke-dasharray="7 12"/>
+  <g stroke="#356a4b" fill="#eef1e7" stroke-width="3">
+    <circle cx="140" cy="139" r="12"/><circle cx="620" cy="203" r="17"/><circle cx="805" cy="165" r="12"/><circle cx="1010" cy="152" r="12"/><circle cx="435" cy="515" r="12"/>
+  </g>
+  <g fill="#356a4b"><circle cx="140" cy="139" r="4"/><circle cx="620" cy="203" r="6"/><circle cx="805" cy="165" r="4"/><circle cx="1010" cy="152" r="4"/><circle cx="435" cy="515" r="4"/></g>
+</svg>
