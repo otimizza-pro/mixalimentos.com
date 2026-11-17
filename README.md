@@ -49,6 +49,6 @@ O build inclui páginas Sobre, Contato e Privacidade, sitemap com datas de alter
 
 O servidor Node negocia text/markdown pelo cabeçalho Accept, informa as alternativas no cabeçalho Link e usa Vary para separar formatos no cache. Entrega Brotli ou gzip para textos, cache de sete dias para recursos estáticos, ETags e respostas 304. As páginas HTML exigem revalidação. Não é necessário instalar bibliotecas em produção.
 
-Na hospedagem estática Apache, os arquivos Markdown ficam disponíveis por URL direta e as alternativas são indicadas no HTML. O .htaccess configura compressão, cache e descoberta do llms.txt. A negociação por Accept é implementada no servidor Node.
+Na hospedagem estática Apache/LiteSpeed, o .htaccess também entrega a alternativa index.md existente para solicitações explícitas de Markdown, respeitando q=0. Requer mod_rewrite e permissão AllowOverride para estas regras. O cabeçalho Vary: Accept separa os formatos no cache. O servidor Node implementa a negociação completa por preferência. Se a plataforma servir os arquivos por um proxy que ignora .htaccess, é necessário configurar a negociação nesse proxy ou usar npm start com server.mjs.
 
 Apenas Barra Mansa, RJ, Brasil está confirmada como localidade. Rua, número, CEP, CNPJ e perfis oficiais continuam pendentes. Configure sameAs apenas com os perfis reais da Mix. Não há servidor MCP nem ferramentas WebMCP, pois o site não possui backend de pedidos. O orçamento depende de revisão e envio pelo visitante no WhatsApp.
