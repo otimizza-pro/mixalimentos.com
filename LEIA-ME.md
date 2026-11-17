@@ -29,7 +29,7 @@ Não há framework, dependência de runtime, banco de dados ou servidor Node nec
 ## Antes de publicar
 
 1. O domínio oficial já está configurado: **https://mixalimentos.com**, sem www.
-2. Confirme a declaração de **10 anos**, inserida a pedido do contratante.
+2. Tempo de atuação atualizado para **Mais de 20 anos**, conforme informado pelo contratante.
 3. Execute `npm run build` depois de qualquer alteração. A versão atual já contém canonical, URLs absolutas de compartilhamento, sitemap com quatro URLs e indexação liberada. O .htaccess prepara redirecionamentos de HTTP e www para HTTPS sem www, além de consolidar as URLs index.html. Essas regras precisam ser verificadas no servidor real após o envio.
 4. Envie o **conteúdo** de `public_html/` para a `public_html` do domínio Hostinger, incluindo `.htaccess`. Faça backup se já houver um site nesse destino.
 5. Confira as quatro rotas em HTTPS, as imagens, o status 404 e os links de WhatsApp no celular.

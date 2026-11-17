@@ -1,10 +1,10 @@
 Sobre a Mix Alimentos
 
-# Há 10 anos ao lado de quem produz e revende alimentos.
+# Mais de 20 anos ao lado de quem produz e revende alimentos.
 
 Por trás de uma padaria que começa cedo, de um restaurante que prepara o almoço e de uma lanchonete que recebe pedidos ao longo do dia, existe uma rotina de compras e reposição. Os alimentos precisam estar disponíveis para que cada negócio possa seguir trabalhando.
 
-É nessa rotina que a Mix Alimentos atua. Há 10 anos, fornecemos ovos de galinha, ovos de codorna em conserva e batata palha para estabelecimentos que preparam, servem ou revendem alimentos. Nossa base é Barra Mansa, no estado do Rio de Janeiro, e nosso atendimento alcança também Pinheiral, Volta Redonda, Resende e Angra dos Reis.
+É nessa rotina que a Mix Alimentos atua. Há mais de 20 anos, fornecemos ovos de galinha, ovos de codorna em conserva e batata palha para estabelecimentos que preparam, servem ou revendem alimentos. Nossa base é Barra Mansa, no estado do Rio de Janeiro, e nosso atendimento alcança também Pinheiral, Volta Redonda, Resende e Angra dos Reis.
 
 ## O abastecimento faz parte do seu dia a dia. Do nosso também.
 

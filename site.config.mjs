@@ -3,7 +3,7 @@ export default {
   whatsapp: '5524999619682',
   phoneDisplay: '(24) 99961-9682',
   domain: 'https://mixalimentos.com',
-  experience: '10 anos', // Declaração autorizada pelo contratante; confirmar antes da publicação.
+  experience: 'Mais de 20 anos', // Tempo de atuação atualizado pelo contratante.
   cities: ['Barra Mansa', 'Pinheiral', 'Volta Redonda', 'Resende', 'Angra dos Reis'],
   // Localidade confirmada; incluir rua e CEP somente após confirmação.
   address: {addressLocality:'Barra Mansa',addressRegion:'RJ',addressCountry:'BR'},

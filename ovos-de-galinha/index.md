@@ -39,9 +39,9 @@ Total por caixa
 
 Entregas programadas para você organizar a reposição.
 
-### 10 anos de experiência
+### Mais de 20 anos de experiência
 
-Uma década de atuação no fornecimento de alimentos.
+Atuação no fornecimento de alimentos para comércios da região.
 
 ### Conversa direta
 

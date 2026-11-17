@@ -2,7 +2,7 @@ Entregamos no seu comércio
 
 # Ovos, codorna e batata palha. Tudo entregue no seu comércio.
 
-Há 10 anos ao lado de quem produz e revende alimentos, com compromisso e pontualidade nas entregas.
+Há mais de 20 anos ao lado de quem produz e revende alimentos, com compromisso e pontualidade nas entregas.
 
 [Solicitar cotação de ovos](https://wa.me/5524999619682?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mix%20Alimentos%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.) [Ver os produtos](https://mixalimentos.com/#produtos)
 
@@ -74,9 +74,9 @@ Angra dos Reis RJ
 
 Entregas programadas para você organizar a reposição.
 
-### 10 anos de experiência
+### Mais de 20 anos de experiência
 
-Uma década de atuação no fornecimento de alimentos.
+Atuação no fornecimento de alimentos para comércios da região.
 
 ### Conversa direta
 
