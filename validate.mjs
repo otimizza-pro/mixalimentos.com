@@ -23,8 +23,8 @@ try{
 for(const route of routes){
 const response=await page.goto('http://127.0.0.1:4173'+route);check('HTTP '+route,response.status()===200);
 await page.evaluate(async()=>{await Promise.all([...document.images].map(async im=>{im.loading='eager';await im.decode().catch(()=>{})}))});
-check('All seven primary menu links '+route,await page.locator('#navigation a').allTextContents().then(labels=>JSON.stringify(labels)===JSON.stringify(['Início','Ovos de galinha','Ovos de codorna','Batata palha','Sobre a Mix Alimentos','Contato','Termos de uso'])));
-check('Correct current primary menu link '+route,await page.locator('#navigation a[aria-current="page"]').count()===(route==='/privacidade/'?0:1));
+check('Only product pages in primary menu '+route,await page.locator('#navigation a').allTextContents().then(labels=>JSON.stringify(labels)===JSON.stringify(['Ovos de galinha','Ovos de codorna','Batata palha'])));
+check('Correct current primary menu link '+route,await page.locator('#navigation a[aria-current="page"]').count()===(['/ovos-de-galinha/','/ovos-de-codorna-em-conserva/','/batata-palha/'].includes(route)?1:0));
 check('One H1 '+route,await page.locator('h1').count()===1);
 check('Images loaded '+route,await page.locator('img').evaluateAll(imgs=>imgs.every(i=>i.naturalWidth>0)));
 check('No displayed prices '+route,!/R\$\s*\d/.test(await page.locator('body').innerText()));
@@ -38,12 +38,12 @@ await page.setViewportSize({width:390,height:844});await page.screenshot({path:p
 const ld=await page.locator('script[type="application/ld+json"]').textContent();check('JSON-LD parse '+route,!!JSON.parse(ld)['@context']);
 }
 for(const [label,route] of [['Sobre a Mix Alimentos','sobre'],['Contato','contato'],['Termos de uso','termos']]){
- await page.goto('http://127.0.0.1:4173/');await page.setViewportSize({width:390,height:844});await page.locator('.menu-toggle').click();await page.locator('#navigation a').filter({hasText:label}).click();check('Mobile information navigation '+route,page.url().includes('/'+route+'/')&&await page.locator('#navigation a[aria-current="page"]').textContent()===label);
+ await page.goto('http://127.0.0.1:4173/');await page.setViewportSize({width:390,height:844});await page.locator('.footer-info a').filter({hasText:label}).click();check('Mobile information footer navigation '+route,page.url().includes('/'+route+'/'));
 }
 await page.goto('http://127.0.0.1:4173/');await page.setViewportSize({width:390,height:844});
 const hero=await page.locator('.hero-actions .btn').boundingBox();check('Hero CTA in first viewport 390',hero.y+hero.height<844);
 await page.locator('.menu-toggle').click();check('Mobile menu expanded',await page.locator('.menu-toggle').getAttribute('aria-expanded')==='true');await page.keyboard.press('Escape');check('Escape closes menu',await page.locator('.menu-toggle').getAttribute('aria-expanded')==='false');
-await page.locator('.menu-toggle').click();await page.locator('#navigation a').nth(1).click();check('Menu product navigation',page.url().includes('/ovos-de-galinha/'));
+await page.locator('.menu-toggle').click();await page.locator('#navigation a').nth(0).click();check('Menu product navigation',page.url().includes('/ovos-de-galinha/'));
 check('Unselected quail quantity hidden',!(await page.locator('#quantity-ovos-de-codorna-em-conserva').isVisible()));
 await page.locator('input[value="Ovos de codorna em conserva"]').check();await page.locator('input[value="Batata palha"]').check();await page.locator('#city').selectOption('Resende');
 check('Selecting products reveals quantities',await page.locator('#quantity-ovos-de-codorna-em-conserva').isVisible()&&await page.locator('#quantity-batata-palha').isVisible());
