@@ -27,7 +27,7 @@ for(const route of routes){
   const graph=JSON.parse(text.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1])['@graph'];
   const organization=graph.find(n=>n['@type']==='Organization');
   check(organization.address.addressLocality==='Barra Mansa'&&!organization.address.streetAddress,url+' confirmed address only');
-  check(!organization.sameAs,url+' no invented profiles');
+  check(JSON.stringify(organization.sameAs||[])===JSON.stringify(config.sameAs),url+' confirmed official profiles');
   const faq=graph.find(n=>n['@type']==='FAQPage');
   if(faq)check(faq.mainEntity.every(q=>text.includes(q.name)&&text.includes(q.acceptedAnswer.text)),url+' schema matches visible FAQ');
   const md=await request(url,{accept:'text/markdown'});

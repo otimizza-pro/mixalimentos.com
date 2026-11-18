@@ -51,7 +51,7 @@ O servidor Node negocia text/markdown pelo cabeçalho Accept, informa as alterna
 
 Na hospedagem estática Apache/LiteSpeed, o .htaccess também entrega a alternativa index.md existente para solicitações explícitas de Markdown, respeitando q=0. Requer mod_rewrite e permissão AllowOverride para estas regras. O cabeçalho Vary: Accept separa os formatos no cache. O servidor Node implementa a negociação completa por preferência. Se a plataforma servir os arquivos por um proxy que ignora .htaccess, é necessário configurar a negociação nesse proxy ou usar npm start com server.mjs.
 
-Apenas Barra Mansa, RJ, Brasil está confirmada como localidade. Rua, número, CEP, CNPJ e perfis oficiais continuam pendentes. Configure sameAs apenas com os perfis reais da Mix. O orçamento depende de revisão e envio pelo visitante no WhatsApp.
+Apenas Barra Mansa, RJ, Brasil está confirmada como localidade. Rua, número, CEP e CNPJ continuam pendentes. O Instagram oficial confirmado é @mixalimentos.rj. Configure sameAs apenas com os perfis reais da Mix. O orçamento depende de revisão e envio pelo visitante no WhatsApp.
 
 ## Ferramentas para agentes
 

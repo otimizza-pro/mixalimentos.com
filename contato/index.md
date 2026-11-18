@@ -4,6 +4,10 @@ WhatsApp comercial: (24) 99961-9682 .
 
 [Falar com a Mix Alimentos](https://wa.me/5524999619682?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Mix%20Alimentos%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.)
 
+## Nosso Instagram
+
+Acesse o perfil oficial da Mix Alimentos: [@mixalimentos.rj](https://www.instagram.com/mixalimentos.rj/) .
+
 ## Para solicitar um orçamento
 
 Informe os produtos, as quantidades desejadas e sua cidade. Também é possível montar a lista na [cotação da página inicial](https://mixalimentos.com/#cotacao) .
