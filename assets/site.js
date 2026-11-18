@@ -41,4 +41,25 @@ quote?.querySelector('[data-combined]')?.addEventListener('click',event=>{
   if(!quote.reportValidity()){event.preventDefault();return;}
   updateQuote();
 });
-document.querySelectorAll('a[data-whatsapp]').forEach(link=>link.addEventListener('click',event=>{if(event.defaultPrevented)return;const detail={page_path:location.pathname,product:link.dataset.product||'geral',cta_position:link.dataset.position||'body',quote_type:link.hasAttribute('data-combined')?'combined':'direct',selected_city:link.dataset.selectedCity||''};window.dispatchEvent(new CustomEvent('mix:whatsapp_click',{detail}));}));
+
+// Only controlled categories are sent. Never include href, message, quantity or free text.
+const analyticsProducts=['ovos-de-galinha','ovos-de-codorna-em-conserva','batata-palha'];
+const analyticsCities=['Barra Mansa','Pinheiral','Volta Redonda','Resende','Angra dos Reis'];
+const analyticsPositions=['header','hero','body','delivery','final_section','sticky_mobile','footer','cross_sell','information'];
+const analyticsPaths=['/','/ovos-de-galinha/','/ovos-de-codorna-em-conserva/','/batata-palha/','/sobre/','/contato/','/privacidade/','/termos/'];
+function trackWhatsApp(link,event){
+  if(event.defaultPrevented)return;
+  const combined=link.hasAttribute('data-combined');
+  if(combined&&(!quote||!quote.checkValidity()))return;
+  const path=location.pathname.replace(/index\.html$/,'');
+  const pagePath=analyticsPaths.includes(path)?path:'/404.html';
+  const selected=combined?analyticsProducts.filter(id=>quote.querySelector('input[data-product-id="'+id+'"]')?.checked):[];
+  const product=combined?(selected.join('|')||'geral'):(analyticsProducts.includes(link.dataset.product)?link.dataset.product:'geral');
+  const city=link.dataset.selectedCity||'';
+  const context=window.dataLayer?.find(item=>item&&item.analytics_page_location)||{};
+  const detail={page_path:pagePath,page_location:context.analytics_page_location||'https://mixalimentos.com'+pagePath,page_referrer:context.analytics_page_referrer||'',product,cta_position:analyticsPositions.includes(link.dataset.position)?link.dataset.position:'body',quote_type:combined?'combined':'direct',selected_city:analyticsCities.includes(city)?city:city?'outra_cidade':'nao_informada'};
+  window.dataLayer=window.dataLayer||[];
+  window.dataLayer.push({event:combined?'quote_request':'whatsapp_click',...detail});
+  window.dispatchEvent(new CustomEvent('mix:whatsapp_click',{detail}));
+}
+document.querySelectorAll('a[data-whatsapp]').forEach(link=>link.addEventListener('click',event=>trackWhatsApp(link,event)));

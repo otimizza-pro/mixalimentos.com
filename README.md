@@ -67,6 +67,8 @@ Apenas o domínio oficial e os endereços locais de desenvolvimento são aceitos
 
 server.mjs chama listen() diretamente quando carregado pela Hostinger, inclusive se a plataforma o importar por um processo próprio. A porta usa PORT (ou 4173) e a interface usa HOST (ou 0.0.0.0). O tratamento das requisições fica em request-handler.mjs, que os testes podem importar sem abrir uma porta. validate-startup.mjs verifica a inicialização por importação, com porta definida pelo ambiente.
 
-## Google Tag Manager
+## Google Tag Manager e GA4
 
-O contêiner GTM-5CPHG7HX está incluído no head de todas as oito páginas e na página 404. A fila dataLayer e o evento de inicialização gtm.js são preparados antes do carregamento assíncrono do script. A função gtag solicitada também é disponibilizada. As tags e os acionadores do contêiner são administrados no Google Tag Manager; não foi criado um ID de GA4 ou qualquer outra tag independente. A página de privacidade foi atualizada. Os testes interceptam o carregamento externo para não enviar dados de teste ao contêiner.
+O único contêiner ativo no código é GTM-5CPHG7HX, confirmado pelo responsável. O destino solicitado é G-0F0M7XHYGC, configurado no GTM, sem instalação independente de GA4. O site prepara whatsapp_click e quote_request, uma interação por clique, com parâmetros controlados e sem conteúdo de mensagens. Não envia page_view manual.
+
+A configuração da conta e o recebimento no GA4 ainda não foram verificados. Veja tracking/CONFIGURACAO-GTM-GA4.md para configurar ou reutilizar as tags existentes e validar o resultado. Testes locais usam o GTM interceptado, sem enviar dados de teste ao Google.

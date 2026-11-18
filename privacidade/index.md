@@ -12,6 +12,8 @@ Não há cadastro neste site. As seleções de produto, quantidade e cidade são
 
 O site utiliza o Google Tag Manager para gerenciar as tags configuradas para a Mix Alimentos. Dependendo das ferramentas ativadas nesse contêiner, podem ser coletados dados de navegação e utilizados cookies, conforme as configurações dessas ferramentas.
 
+O site prepara eventos de clique no WhatsApp e de intenção de cotação com informações controladas, como produto e posição do botão. Esses eventos não incluem o conteúdo da mensagem, quantidades, nome, e-mail, telefone ou endereço do cliente.
+
 O Google Tag Manager não envia, por si só, sua mensagem de cotação pelo WhatsApp. Para saber mais sobre os serviços do Google, consulte a [Política de Privacidade do Google](https://policies.google.com/privacy?hl=pt-BR) .
 
 ## Contato pelo WhatsApp

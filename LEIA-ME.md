@@ -52,7 +52,7 @@ O build compacta CSS e JavaScript apenas no pacote público, conserva os fontes 
 
 Esta versão carrega o contêiner GTM-5CPHG7HX. O carregamento de ferramentas como GA4, pixels e cookies depende das tags publicadas nesse contêiner. Não há dependências de fontes externas. A interface não persiste os campos de cotação; eles são usados no navegador para compor a mensagem que o visitante escolhe abrir no WhatsApp.
 
-Os links emitem um evento local `mix:whatsapp_click`, com `page_path`, `product`, `cta_position`, `quote_type` e `selected_city`. O código local não envia esses eventos automaticamente ao dataLayer; o uso em medição depende dos acionadores e tags configurados no GTM. Clique não representa lead recebido ou venda. As ferramentas de medição devem ser configuradas no GTM com os IDs reais; preencher `analyticsId` sozinho não ativa nada.
+Os links emitem um evento local `mix:whatsapp_click`, com `page_path`, `product`, `cta_position`, `quote_type` e `selected_city`. O código envia whatsapp_click ou quote_request ao dataLayer, conforme a interação. O envio ao GA4 depende das tags e acionadores publicados no GTM. Clique não representa lead recebido ou venda. As ferramentas de medição devem ser configuradas no GTM com os IDs reais; o destino solicitado é G-0F0M7XHYGC, sem instalação independente de GA4.
 
 Os dados estruturados incluem Organization e Product sem ofertas ou avaliações fictícias. BreadcrumbList e WebSite são adicionados com domínio confirmado. LocalBusiness com endereço não foi incluído porque não há endereço público autorizado.
 

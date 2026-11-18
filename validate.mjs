@@ -3,6 +3,7 @@ import path from 'node:path';
 import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
 import {handler} from './request-handler.mjs';
+import config from './site.config.mjs';
 const require=createRequire(import.meta.url);
 const {resolveTool,browserOptions}=require('./dev-tools.cjs');
 const {chromium}=require(resolveTool('playwright'));
@@ -25,7 +26,7 @@ const response=await page.goto('http://127.0.0.1:4173'+route);check('HTTP '+rout
 await page.evaluate(async()=>{await Promise.all([...document.images].map(async im=>{im.loading='eager';await im.decode().catch(()=>{})}))});
 check('Only product pages in primary menu '+route,await page.locator('#navigation a').allTextContents().then(labels=>JSON.stringify(labels)===JSON.stringify(['Ovos de galinha','Ovos de codorna','Batata palha'])));
 check('Correct current primary menu link '+route,await page.locator('#navigation a[aria-current="page"]').count()===(['/ovos-de-galinha/','/ovos-de-codorna-em-conserva/','/batata-palha/'].includes(route)?1:0));
-check('Single GTM container and initialized queue '+route,await page.locator('script[src="https://www.googletagmanager.com/gtm.js?id=GTM-5CPHG7HX"]').count()===1&&await page.evaluate(()=>typeof window.gtag==='function'&&window.dataLayer.filter(item=>item.event==='gtm.js'&&typeof item['gtm.start']==='number').length===1));
+check('Single GTM container and initialized queue '+route,await page.locator('script[src="https://www.googletagmanager.com/gtm.js?id='+config.gtmId+'"]').count()===1&&await page.evaluate(()=>typeof window.gtag==='function'&&window.dataLayer.filter(item=>item[0]==='js').length===1));
 check('One H1 '+route,await page.locator('h1').count()===1);
 check('Images loaded '+route,await page.locator('img').evaluateAll(imgs=>imgs.every(i=>i.naturalWidth>0)));
 check('No displayed prices '+route,!/R\$\s*\d/.test(await page.locator('body').innerText()));
@@ -62,6 +63,16 @@ await page.locator('#quantity-batata-palha').fill('-1');check('Negative quantiti
 await page.evaluate(()=>{window.__events=[];window.addEventListener('mix:whatsapp_click',e=>window.__events.push(e.detail))});
 // Prevent external navigation. Validate the local intent event without contacting anyone.
 await page.evaluate(()=>document.querySelector('[data-combined]').addEventListener('click',e=>e.preventDefault()));await page.locator('[data-combined]').click();const events=await page.evaluate(()=>window.__events);check('One intention event without personal data',events.length===1&&events[0].selected_city==='Resende'&&!JSON.stringify(events).includes('2 caixas'));
+
+const readTracking=()=>page.evaluate(()=>window.dataLayer.filter(item=>['whatsapp_click','quote_request'].includes(item.event)));
+check('One quote request per combined click',(await readTracking()).length===1&&(await readTracking())[0].event==='quote_request');
+await page.locator('#quantity-ovos-de-galinha').fill('0.25');await page.locator('[data-combined]').click();check('Invalid quote is not tracked',(await readTracking()).length===1);await page.locator('#quantity-ovos-de-galinha').fill('0.5');
+await page.evaluate(()=>{window.__originalTrackingUrl=location.href;history.replaceState(null,'','?email=private%40example.invalid#customer');document.querySelector('.hero-actions a[data-whatsapp]').addEventListener('click',event=>event.preventDefault());});
+await page.locator('.hero-actions a[data-whatsapp]').click();
+const trackingEvents=await readTracking();
+check('Direct click emits one separate WhatsApp event',trackingEvents.length===2&&trackingEvents[1].event==='whatsapp_click');
+check('Tracking excludes message quantities phone and query',trackingEvents.every(item=>!['href','link_url','message','quantity','phone','email'].some(key=>key in item))&&!JSON.stringify(trackingEvents).includes('private')&&!JSON.stringify(trackingEvents).includes('wa.me')&&!JSON.stringify(trackingEvents).includes('180 ovos'));
+await page.evaluate(()=>history.replaceState(null,'',window.__originalTrackingUrl));
 await page.locator('.privacy-link').click();check('Privacy opens as a dedicated page',page.url().includes('/privacidade/')&&await page.locator('h1').count()===1);check('Privacy popup removed',await page.locator('dialog').count()===0);await page.goBack();
 await page.locator('summary').first().click();check('FAQ opens',await page.locator('details').first().getAttribute('open')!==null);
 check('404 handler status',(await request('http://127.0.0.1:4173/inexistente')).status===404);

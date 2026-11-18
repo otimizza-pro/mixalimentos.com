@@ -13,6 +13,6 @@ export default {
   // Alterar apenas quando o conteúdo da respectiva página mudar, nunca a cada build.
   lastModified: {'':'2026-11-17','ovos-de-galinha':'2026-11-17','ovos-de-codorna-em-conserva':'2026-11-17','batata-palha':'2026-11-17','sobre':'2026-11-17','contato':'2026-11-17','privacidade':'2026-11-17','termos':'2026-11-17'},
   gtmId: 'GTM-5CPHG7HX',
-  analyticsId: '', // Reservado para configurações adicionais de medição.
+  analyticsId: 'G-0F0M7XHYGC', // Destino GA4 a configurar no GTM. Não instala uma segunda tag.
   searchConsoleVerification: ''
 };
