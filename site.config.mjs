@@ -12,6 +12,7 @@ export default {
   sameAs: [instagram.url], // Somente URLs confirmadas de perfis oficiais da Mix.
   // Alterar apenas quando o conteúdo da respectiva página mudar, nunca a cada build.
   lastModified: {'':'2026-11-17','ovos-de-galinha':'2026-11-17','ovos-de-codorna-em-conserva':'2026-11-17','batata-palha':'2026-11-17','sobre':'2026-11-17','contato':'2026-11-17','privacidade':'2026-11-17','termos':'2026-11-17'},
-  analyticsId: '', // Reservado. Nenhum rastreador é carregado nesta versão.
+  gtmId: 'GTM-5CPHG7HX',
+  analyticsId: '', // Reservado para configurações adicionais de medição.
   searchConsoleVerification: ''
 };

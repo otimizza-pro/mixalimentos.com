@@ -36,7 +36,7 @@ Não há framework, dependência de runtime, banco de dados ou servidor Node nec
 
 Nenhuma publicação foi realizada. Não foram inventados CNPJ, endereço residencial, horário de atendimento ou redes sociais. O domínio foi informado pelo contratante. O rodapé das quatro páginas inclui o crédito “Desenvolvido por Otimizza”, com link para https://otimizza.com.br.
 
-O build compacta CSS e JavaScript apenas no pacote público, conserva os fontes legíveis e adiciona uma versão de conteúdo aos links de CSS/JS para evitar cache antigo. A logo pública usa WebP. As fotos têm versões WebP responsivas e a imagem para redes sociais usa JPEG de 1200 × 630 px. O .htaccess configura compactação de texto e cache de arquivos estáticos quando os módulos do servidor estiverem disponíveis. Não há dependências de fontes externas, frameworks de frontend ou rastreadores.
+O build compacta CSS e JavaScript apenas no pacote público, conserva os fontes legíveis e adiciona uma versão de conteúdo aos links de CSS/JS para evitar cache antigo. A logo pública usa WebP. As fotos têm versões WebP responsivas e a imagem para redes sociais usa JPEG de 1200 × 630 px. O .htaccess configura compactação de texto e cache de arquivos estáticos quando os módulos do servidor estiverem disponíveis. Não há dependências de fontes externas ou frameworks de frontend. O contêiner do Google Tag Manager é carregado de forma assíncrona.
 
 ## Após o envio à Hostinger
 
@@ -50,9 +50,9 @@ O build compacta CSS e JavaScript apenas no pacote público, conserva os fontes 
 
 ## Mensuração e privacidade
 
-Esta versão não carrega GA4, pixels, cookies ou fontes externas. A interface não persiste os campos de cotação; eles são usados no navegador para compor a mensagem que o visitante escolhe abrir no WhatsApp.
+Esta versão carrega o contêiner GTM-5CPHG7HX. O carregamento de ferramentas como GA4, pixels e cookies depende das tags publicadas nesse contêiner. Não há dependências de fontes externas. A interface não persiste os campos de cotação; eles são usados no navegador para compor a mensagem que o visitante escolhe abrir no WhatsApp.
 
-Os links emitem um evento local `mix:whatsapp_click`, com `page_path`, `product`, `cta_position`, `quote_type` e `selected_city`. Isso prepara a integração futura sem carregar rastreadores e sem enviar quantidade, nome ou telefone do visitante para analytics. Clique não representa lead recebido ou venda. Ativar GA4 exige implementação posterior, decisão de privacidade e teste com o ID real; preencher `analyticsId` sozinho não ativa nada.
+Os links emitem um evento local `mix:whatsapp_click`, com `page_path`, `product`, `cta_position`, `quote_type` e `selected_city`. O código local não envia esses eventos automaticamente ao dataLayer; o uso em medição depende dos acionadores e tags configurados no GTM. Clique não representa lead recebido ou venda. As ferramentas de medição devem ser configuradas no GTM com os IDs reais; preencher `analyticsId` sozinho não ativa nada.
 
 Os dados estruturados incluem Organization e Product sem ofertas ou avaliações fictícias. BreadcrumbList e WebSite são adicionados com domínio confirmado. LocalBusiness com endereço não foi incluído porque não há endereço público autorizado.
 

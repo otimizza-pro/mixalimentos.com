@@ -66,3 +66,7 @@ Apenas o domínio oficial e os endereços locais de desenvolvimento são aceitos
 ## Inicialização do Node
 
 server.mjs chama listen() diretamente quando carregado pela Hostinger, inclusive se a plataforma o importar por um processo próprio. A porta usa PORT (ou 4173) e a interface usa HOST (ou 0.0.0.0). O tratamento das requisições fica em request-handler.mjs, que os testes podem importar sem abrir uma porta. validate-startup.mjs verifica a inicialização por importação, com porta definida pelo ambiente.
+
+## Google Tag Manager
+
+O contêiner GTM-5CPHG7HX está incluído no head de todas as oito páginas e na página 404. A fila dataLayer e o evento de inicialização gtm.js são preparados antes do carregamento assíncrono do script. A função gtag solicitada também é disponibilizada. As tags e os acionadores do contêiner são administrados no Google Tag Manager; não foi criado um ID de GA4 ou qualquer outra tag independente. A página de privacidade foi atualizada. Os testes interceptam o carregamento externo para não enviar dados de teste ao contêiner.

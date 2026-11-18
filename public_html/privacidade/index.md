@@ -6,7 +6,13 @@ Este site apresenta os produtos e a área de entrega da Mix Alimentos. Aqui expl
 
 ## Navegação e cotação
 
-Esta versão do site não utiliza cookies de análise, publicidade ou rastreadores. Não há cadastro. As seleções de produto, quantidade e cidade são usadas no navegador para montar a mensagem de cotação.
+Não há cadastro neste site. As seleções de produto, quantidade e cidade são usadas no navegador para montar a mensagem de cotação.
+
+## Ferramentas de medição
+
+O site utiliza o Google Tag Manager para gerenciar as tags configuradas para a Mix Alimentos. Dependendo das ferramentas ativadas nesse contêiner, podem ser coletados dados de navegação e utilizados cookies, conforme as configurações dessas ferramentas.
+
+O Google Tag Manager não envia, por si só, sua mensagem de cotação pelo WhatsApp. Para saber mais sobre os serviços do Google, consulte a [Política de Privacidade do Google](https://policies.google.com/privacy?hl=pt-BR) .
 
 ## Contato pelo WhatsApp
 
