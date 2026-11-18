@@ -23,17 +23,22 @@ try{
 for(const route of routes){
 const response=await page.goto('http://127.0.0.1:4173'+route);check('HTTP '+route,response.status()===200);
 await page.evaluate(async()=>{await Promise.all([...document.images].map(async im=>{im.loading='eager';await im.decode().catch(()=>{})}))});
+check('All seven primary menu links '+route,await page.locator('#navigation a').allTextContents().then(labels=>JSON.stringify(labels)===JSON.stringify(['Início','Ovos de galinha','Ovos de codorna','Batata palha','Sobre a Mix Alimentos','Contato','Termos de uso'])));
+check('Correct current primary menu link '+route,await page.locator('#navigation a[aria-current="page"]').count()===(route==='/privacidade/'?0:1));
 check('One H1 '+route,await page.locator('h1').count()===1);
 check('Images loaded '+route,await page.locator('img').evaluateAll(imgs=>imgs.every(i=>i.naturalWidth>0)));
 check('No displayed prices '+route,!/R\$\s*\d/.test(await page.locator('body').innerText()));
 const hrefs=await page.locator('a[href]').evaluateAll(as=>as.map(a=>a.href));
 for(const link of new Set(hrefs.filter(h=>h.startsWith('http://127.0.0.1:4173/')))){const r=await request(link);check('Internal link handler '+new URL(link).pathname,r.ok)}
 const wa=hrefs.filter(h=>h.startsWith('https://wa.me/'));check('Official WhatsApp '+route,wa.length>0&&wa.every(h=>new URL(h).pathname==='/5524999619682'&&new URL(h).searchParams.get('text')?.length>15));
-for(const width of [320,360,375,390,768,1024,1440]){await page.setViewportSize({width,height:900});check(`Reflow ${route} ${width}`,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
+for(const width of [320,360,375,390,768,900,1000,1024,1100,1440]){await page.setViewportSize({width,height:900});check(`Reflow ${route} ${width}`,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
 for(const width of [390,1440]){await page.setViewportSize({width,height:width===390?844:1000});await page.addScriptTag({path:axe});const result=await page.evaluate(async()=>await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa']}}));check(`Accessibility ${route} ${width}`,result.violations.length===0,result.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>n.target)})));await fs.writeFile(path.join(evidence,`axe-${route.split('/').filter(Boolean)[0]||'home'}-${width}.json`),JSON.stringify(result,null,2));}
 await page.setViewportSize({width:1440,height:1000});await page.screenshot({path:path.join(evidence,`${route.split('/').filter(Boolean)[0]||'home'}-desktop.png`),fullPage:true});
 await page.setViewportSize({width:390,height:844});await page.screenshot({path:path.join(evidence,`${route.split('/').filter(Boolean)[0]||'home'}-mobile.png`),fullPage:true});
 const ld=await page.locator('script[type="application/ld+json"]').textContent();check('JSON-LD parse '+route,!!JSON.parse(ld)['@context']);
+}
+for(const [label,route] of [['Sobre a Mix Alimentos','sobre'],['Contato','contato'],['Termos de uso','termos']]){
+ await page.goto('http://127.0.0.1:4173/');await page.setViewportSize({width:390,height:844});await page.locator('.menu-toggle').click();await page.locator('#navigation a').filter({hasText:label}).click();check('Mobile information navigation '+route,page.url().includes('/'+route+'/')&&await page.locator('#navigation a[aria-current="page"]').textContent()===label);
 }
 await page.goto('http://127.0.0.1:4173/');await page.setViewportSize({width:390,height:844});
 const hero=await page.locator('.hero-actions .btn').boundingBox();check('Hero CTA in first viewport 390',hero.y+hero.height<844);
