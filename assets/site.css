@@ -65,3 +65,5 @@
 @media(max-width:1000px){.nav{max-height:calc(100dvh - 110px);overflow-y:auto;overscroll-behavior:contain}}
 
 .instagram-link{display:inline-flex;align-items:center;gap:10px;width:fit-content;font-weight:700;text-decoration:none!important}.instagram-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;padding:8px;flex:none;border-radius:10px;background:linear-gradient(135deg,#feda75 0%,#fa7e1e 25%,#d62976 58%,#962fbf 80%,#4f5bd5 100%);color:#fff;box-shadow:0 3px 8px #962fbf20}.instagram-icon svg{width:20px;height:20px;stroke-width:1.8}.instagram-link:hover .instagram-icon{box-shadow:0 4px 12px #962fbf35}.footer-address{font-style:normal;line-height:1.7;max-width:32ch}.contact-address{font-style:normal;line-height:1.8;margin-top:16px}
+
+.footer-info{display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px}.footer-info a:hover{text-decoration:underline}.footer-info a{padding-block:3px}

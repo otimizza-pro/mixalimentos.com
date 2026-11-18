@@ -24,6 +24,10 @@ for(const route of routes){
   const text=html.body.toString();
   check(!text.includes('<dialog')&&!text.includes('privacy-button'),url+' no privacy popup');
   check(text.includes('rel="privacy-policy"')&&text.includes('rel="terms-of-service"'),url+' legal page links');
+  if(!route){
+    check(text.includes('<nav class="footer-info" aria-label="Informações da empresa">'),'Homepage has semantic company navigation before JavaScript');
+    for(const target of ['sobre','contato','termos'])check(new RegExp('<a[^>]*href="/'+target+'/"[^>]*>').test(text),'Homepage has real canonical '+target+' anchor before JavaScript');
+  }
   const graph=JSON.parse(text.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1])['@graph'];
   const organization=graph.find(n=>n['@type']==='Organization');
   check(Object.entries(config.address).every(([key,value])=>organization.address[key]===value),url+' confirmed complete address');
