@@ -6,8 +6,8 @@ export default {
   domain: 'https://mixalimentos.com',
   experience: 'Mais de 20 anos', // Tempo de atuação atualizado pelo contratante.
   cities: ['Barra Mansa', 'Pinheiral', 'Volta Redonda', 'Resende', 'Angra dos Reis'],
-  // Localidade confirmada; incluir rua e CEP somente após confirmação.
-  address: {addressLocality:'Barra Mansa',addressRegion:'RJ',addressCountry:'BR'},
+  // Endereço comercial completo informado pelo contratante.
+  address: {streetAddress:'Rua Geraldo José de Freitas, 507, Boa Vista I',addressLocality:'Barra Mansa',addressRegion:'RJ',postalCode:'27332-180',addressCountry:'BR'},
   instagram,
   sameAs: [instagram.url], // Somente URLs confirmadas de perfis oficiais da Mix.
   // Alterar apenas quando o conteúdo da respectiva página mudar, nunca a cada build.

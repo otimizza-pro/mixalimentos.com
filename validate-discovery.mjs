@@ -26,7 +26,7 @@ for(const route of routes){
   check(text.includes('rel="privacy-policy"')&&text.includes('rel="terms-of-service"'),url+' legal page links');
   const graph=JSON.parse(text.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1])['@graph'];
   const organization=graph.find(n=>n['@type']==='Organization');
-  check(organization.address.addressLocality==='Barra Mansa'&&!organization.address.streetAddress,url+' confirmed address only');
+  check(Object.entries(config.address).every(([key,value])=>organization.address[key]===value),url+' confirmed complete address');
   check(JSON.stringify(organization.sameAs||[])===JSON.stringify(config.sameAs),url+' confirmed official profiles');
   const faq=graph.find(n=>n['@type']==='FAQPage');
   if(faq)check(faq.mainEntity.every(q=>text.includes(q.name)&&text.includes(q.acceptedAnswer.text)),url+' schema matches visible FAQ');

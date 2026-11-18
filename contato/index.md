@@ -6,7 +6,9 @@ WhatsApp comercial: (24) 99961-9682 .
 
 ## Nosso Instagram
 
-Acesse o perfil oficial da Mix Alimentos: [@mixalimentos.rj](https://www.instagram.com/mixalimentos.rj/) .
+Acesse o perfil oficial da Mix Alimentos:
+
+[Instagram @mixalimentos.rj](https://www.instagram.com/mixalimentos.rj/)
 
 ## Para solicitar um orçamento
 
@@ -16,7 +18,11 @@ Informe os produtos, as quantidades desejadas e sua cidade. Também é possível
 
 Atendemos Barra Mansa, Pinheiral, Volta Redonda, Resende, Angra dos Reis. Consulte a programação e a disponibilidade para seu endereço. Condições de fornecimento e entrega são confirmadas no atendimento.
 
-Base de atendimento: Barra Mansa, Rio de Janeiro, Brasil.
+## Nosso endereço
+
+Rua Geraldo José de Freitas, 507, Boa Vista I
+Barra Mansa, RJ
+CEP 27332-180
 
 Fonte: https://mixalimentos.com/contato/
 
