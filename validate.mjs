@@ -64,7 +64,7 @@ await page.evaluate(()=>{window.__events=[];window.addEventListener('mix:whatsap
 // Prevent external navigation. Validate the local intent event without contacting anyone.
 await page.evaluate(()=>document.querySelector('[data-combined]').addEventListener('click',e=>e.preventDefault()));await page.locator('[data-combined]').click();const events=await page.evaluate(()=>window.__events);check('One intention event without personal data',events.length===1&&events[0].selected_city==='Resende'&&!JSON.stringify(events).includes('2 caixas'));
 
-const readTracking=()=>page.evaluate(()=>window.dataLayer.filter(item=>['whatsapp_click','quote_request'].includes(item.event)));
+const readTracking=()=>page.evaluate(()=>window.dataLayer.filter(item=>['whatsapp_click','quote_request','city_whatsapp','footer_instagram'].includes(item.event)));
 check('One quote request per combined click',(await readTracking()).length===1&&(await readTracking())[0].event==='quote_request');
 await page.locator('#quantity-ovos-de-galinha').fill('0.25');await page.locator('[data-combined]').click();check('Invalid quote is not tracked',(await readTracking()).length===1);await page.locator('#quantity-ovos-de-galinha').fill('0.5');
 await page.evaluate(()=>{window.__originalTrackingUrl=location.href;history.replaceState(null,'','?email=private%40example.invalid#customer');document.querySelector('.hero-actions a[data-whatsapp]').addEventListener('click',event=>event.preventDefault());});
@@ -73,6 +73,21 @@ const trackingEvents=await readTracking();
 check('Direct click emits one separate WhatsApp event',trackingEvents.length===2&&trackingEvents[1].event==='whatsapp_click');
 check('Tracking excludes message quantities phone and query',trackingEvents.every(item=>!['href','link_url','message','quantity','phone','email'].some(key=>key in item))&&!JSON.stringify(trackingEvents).includes('private')&&!JSON.stringify(trackingEvents).includes('wa.me')&&!JSON.stringify(trackingEvents).includes('180 ovos'));
 await page.evaluate(()=>history.replaceState(null,'',window.__originalTrackingUrl));
+await page.evaluate(()=>document.querySelectorAll('footer a[data-whatsapp],footer .instagram-link').forEach(link=>link.addEventListener('click',event=>event.preventDefault())));
+await page.locator('footer a[data-whatsapp][data-position="footer"]').click();
+let footerTracking=await readTracking();
+check('Footer phone emits whatsapp_click once',footerTracking.length===3&&footerTracking[2].event==='whatsapp_click'&&footerTracking[2].cta_position==='footer');
+check('Footer phone does not duplicate generic or quote event',footerTracking.filter(item=>item.event==='whatsapp_click').length===2&&footerTracking.filter(item=>item.event==='quote_request').length===1);
+await page.locator('footer .instagram-link').click();footerTracking=await readTracking();
+check('Footer Instagram emits footer_instagram once',footerTracking.length===4&&footerTracking[3].event==='footer_instagram'&&footerTracking[3].cta_position==='footer');
+check('Footer Instagram excludes contact URL and account handle',!JSON.stringify(footerTracking[3]).includes('instagram.com')&&!JSON.stringify(footerTracking[3]).includes('@mixalimentos')&&!('link_url'in footerTracking[3]));
+const deliveryPage=await context.newPage();await deliveryPage.goto('http://127.0.0.1:4173/');
+await deliveryPage.locator('a[data-whatsapp][data-position="delivery"]').evaluate(link=>link.addEventListener('click',event=>event.preventDefault()));
+await deliveryPage.locator('a[data-whatsapp][data-position="delivery"]').click();
+const cityTracking=await deliveryPage.evaluate(()=>window.dataLayer.filter(item=>item.event==='city_whatsapp'));await deliveryPage.close();
+check('Delivery CTA emits city_whatsapp once',cityTracking.length===1&&cityTracking[0].event==='city_whatsapp'&&cityTracking[0].cta_position==='delivery');
+
+
 await page.locator('.privacy-link').click();check('Privacy opens as a dedicated page',page.url().includes('/privacidade/')&&await page.locator('h1').count()===1);check('Privacy popup removed',await page.locator('dialog').count()===0);await page.goBack();
 await page.locator('summary').first().click();check('FAQ opens',await page.locator('details').first().getAttribute('open')!==null);
 check('404 handler status',(await request('http://127.0.0.1:4173/inexistente')).status===404);

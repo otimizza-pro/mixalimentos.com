@@ -57,7 +57,15 @@ const city=link.dataset.selectedCity||'';
 const context=window.dataLayer?.find(item=>item&&item.analytics_page_location)||{};
 const detail={page_path:pagePath,page_location:context.analytics_page_location||'https://mixalimentos.com'+pagePath,page_referrer:context.analytics_page_referrer||'',product,cta_position:analyticsPositions.includes(link.dataset.position)?link.dataset.position:'body',quote_type:combined?'combined':'direct',selected_city:analyticsCities.includes(city)?city:city?'outra_cidade':'nao_informada'};
 window.dataLayer=window.dataLayer||[];
-window.dataLayer.push({event:combined?'quote_request':'whatsapp_click',...detail});
+window.dataLayer.push({event:combined?'quote_request':link.dataset.position==='delivery'?'city_whatsapp':'whatsapp_click',...detail});
 window.dispatchEvent(new CustomEvent('mix:whatsapp_click',{detail}));
 }
 document.querySelectorAll('a[data-whatsapp]').forEach(link=>link.addEventListener('click',event=>trackWhatsApp(link,event)));
+document.querySelectorAll('footer .instagram-link').forEach(link=>link.addEventListener('click',event=>{
+if(event.defaultPrevented)return;
+const path=location.pathname.replace(/index\.html$/,'');
+const pagePath=analyticsPaths.includes(path)?path:'/404.html';
+const context=window.dataLayer?.find(item=>item&&item.analytics_page_location)||{};
+window.dataLayer=window.dataLayer||[];
+window.dataLayer.push({event:'footer_instagram',page_path:pagePath,page_location:context.analytics_page_location||'https://mixalimentos.com'+pagePath,page_referrer:context.analytics_page_referrer||'',product:'geral',cta_position:'footer',quote_type:'direct',selected_city:'nao_informada'});
+}));

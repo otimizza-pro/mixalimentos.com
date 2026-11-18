@@ -69,6 +69,6 @@ server.mjs chama listen() diretamente quando carregado pela Hostinger, inclusive
 
 ## Google Tag Manager e GA4
 
-O único contêiner ativo no código é GTM-5CPHG7HX, confirmado pelo responsável. O destino solicitado é G-0F0M7XHYGC, configurado no GTM, sem instalação independente de GA4. O site prepara whatsapp_click e quote_request, uma interação por clique, com parâmetros controlados e sem conteúdo de mensagens. Não envia page_view manual.
+O único contêiner ativo no código é GTM-5CPHG7HX, confirmado pelo responsável. O destino solicitado é G-0F0M7XHYGC, configurado no GTM, sem instalação independente de GA4. O site prepara whatsapp_click, quote_request, city_whatsapp e footer_instagram, uma interação por clique, com parâmetros controlados e sem conteúdo de mensagens. Não envia page_view manual.
 
 A configuração da conta e o recebimento no GA4 ainda não foram verificados. Veja tracking/CONFIGURACAO-GTM-GA4.md para configurar ou reutilizar as tags existentes e validar o resultado. Testes locais usam o GTM interceptado, sem enviar dados de teste ao Google.
